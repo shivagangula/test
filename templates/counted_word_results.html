@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RESULTS</title>
+    <style>
+      h3{
+        text-align: center;
+          margin: 5px;
+          color: black;
+      }
+      h1{
+        text-align: center;
+      }
+        div{
+            text-align: justify-all;
+            float: left;
+            width: auto;
+            height: auto;
+            border: solid green 1px;
+            border-radius: 5px;
+            margin: 10px;
+            background: deepskyblue;
+
+        }
+        h2{
+            border: solid red 0.5px;
+            text-align: center;
+
+        }
+    </style>
+  </head>
+  <body>
+     <a href="{% url 'count' %}">Return to home</a>
+    <h1>Your Orignal Content :</h1>
+    <h2>{{ content }}</h2>
+{% for words,count in count_of_words %}
+    <div>
+        <h3>{{ words }}</h3>
+        <br>
+        <h3>{{ count }}</h3>
+    </div>
+{% endfor %}
+
+  </body>
+</html>
